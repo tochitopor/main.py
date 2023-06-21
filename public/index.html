@@ -1,0 +1,66 @@
+<!--Здесь определена простейшая форма для ввода названия виртуального канала и ip-адреса. 
+И по нажатию на кнопку данные отправляются в запросе POST по адресу "add_vl".-->
+
+<!--Атрибут type определяет тип кнопки. Ему задают одно из трёх значений:
+
+--button — значение по умолчанию. Означает, что элемент — обычная кнопка. Она может добавлять товары в корзину или избранное, переключать слайдеры или закрывать всплывающие окна.
+--submit задаётся кнопкам для отправки формы. Когда пользователь нажимает на кнопку с таким типом, браузер отправляет данные формы на сервер.
+--reset добавляется кнопкам сброса формы. Когда пользователь нажимает на такую кнопку, браузер возвращает значения всех полей формы к изначальным.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JULETTA.COM</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h2>Форма ввода</h2>
+	
+	<fieldset>
+	<div>Select IP:</div>
+    <select name="ip[]" multiple="multiple" size="4">
+	    <option value="1">192.168.1.101</option>
+        <option value="2">192.168.1.102</option>
+        <option value="3">192.168.1.103</option>
+		<option value="4">192.168.1.104</option>
+        <option value="5">192.168.1.105</option>
+		<option value="6">192.168.1.106</option>
+        <option value="7">192.168.1.107</option>
+		<option value="8">192.168.1.108</option>
+        <option value="9">192.168.1.109</option>
+		<option value="10">192.168.1.110</option>
+        <option value="11">192.168.1.111</option>
+		<option value="12">192.168.1.112</option>
+        <option value="13">192.168.1.113</option>
+		<option value="14">192.168.1.114</option>
+        <option value="15">192.168.1.115</option>
+		<option value="16">192.168.1.116</option>
+        <option value="17">192.168.1.117</option>
+    </select>
+    <br><br>
+	
+	<form action="/add_vl" name="add_vl" method="POST">
+	    <p>
+            VL_Name:<br>
+            <input name="vl_name" />
+        </p>
+        <p>
+            VL_IP:<br>
+            <input name="vl_ip" type="str" />
+        </p>
+		<p>
+			<button name="addBtn" type="submit">Add VL</button>
+			<button name="deleteBtn">Delete VL</button>
+			<button name="resetBtn" type="reset">Reload table</button>
+			<button name="saveBtn" type="submit">Save table</button>
+			<button name="startBtn">Start test</button>
+		</p>
+    </form>
+	</fieldset>
+	
+	<form action="/delete_vl" name="delete_vl" method="POST">
+	</form>
+
+		
+</body>
+</html>
