@@ -36,8 +36,6 @@ def find_device(ip):
             return device
     return None
 
-
-
 app = FastAPI()
 
 
